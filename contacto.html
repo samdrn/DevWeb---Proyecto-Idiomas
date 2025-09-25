@@ -17,7 +17,7 @@
                 <li><a href="#">Precios</a></li>
                 <li><a href="#">Testimonios</a></li>
                 <li><a href="#">Galería</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="#">Acerca de</a></li>
             </ul>
         </nav>
@@ -31,15 +31,38 @@
             <h3>Contáctanos</h3>
             <p>Carretera al Puerto de la Libertad </p> <!--Poner un simbolo como de ubicacion-->
             <p>+503 7123 4567</p> <!--Poner un simbolo como de telefono-->
-            <p>ACI503@gmail.com</p> <!--Poner un simbolo como de correo-->
+            <p>ACI503@gmail.com</p> 
         </div>
     </section>
     <form action="index.html" method="post" id="formulario">
         <label for="nombre-completo">Nombre completo: </label>
-        <input type="text" name="nombre-completo" id="nombre-completo">
+        <input type="text" name="nombre-completo" id="nombre-completo" required><br>
 
         <label for="correo-electronico">Correo electrónico: </label>
-        <input type="text" name="correo-electrónico" id="correo-electronico">
+        <input type="text" name="correo-electrónico" id="correo-electronico" required><br>
+
+        <label for="fecha-nacimiento">Fecha de Nacimiento: </label>
+        <input type="date" name="fecha-nacimiento"id="fecha-nacimiento" required><br>
+
+        <label for="telefono">Número de teléfono: </label>
+        <input type="tel" name="telefono" id="telefono" required><br>
+
+        <label for="curso-interesado"></label>
+        <datalist id="elegido">
+            <option value="Inglés"></option> <!--Estos los puse para mientras, se cambian cuando este la página de cursos-->
+            <option value="Francés"></option>
+            <option value="Italiano"></option>
+            <option value="Japónes"></option>
+        </datalist>
+
+        <label for="mensaje">Mensaje: </label>
+        <input type="text" name="mensaje" id="mensaje" required> <br>
+        <!--Intente usar textarea pero salía que el navegador no lo soportaba--> <!--This Browser is NOT supported WebSocket for Live-->
+        <!--textarea name="mensaje" name="mensaje" id="mensaje" rows="10" required > <br>-->
+
+        <input type="submit" value="Enviar">
+
+       
     </form>
     
     <footer>
