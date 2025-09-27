@@ -16,9 +16,9 @@
                 <li><a href="#">Cursos</a></li>
                 <li><a href="#">Precios</a></li>
                 <li><a href="#">Testimonios</a></li>
-                <li><a href="#">Galería</a></li>
+                <li><a href="../Fase1/galeria.html">Galería</a></li>
                 <li><a href="../Fase1/contacto.html">Contacto</a></li>
-                <li><a href="#">Acerca de</a></li>
+                <li><a href="../Fase1/acerca-de.html">Acerca de</a></li>
             </ul>
         </nav>
     </div>
@@ -31,23 +31,24 @@
             <h3>Contáctanos</h3>
             <p>Carretera al Puerto de la Libertad </p> <!--Poner un simbolo como de ubicacion-->
             <p>+503 7123 4567</p> <!--Poner un simbolo como de telefono-->
-            <p>ACI503@gmail.com</p> 
+            <p>ACI503@gmail.com</p> <!--Poner un simbolo como de correo-->
         </div>
     </section>
     <form action="index.html" method="post" id="formulario">
         <label for="nombre-completo">Nombre completo: </label>
-        <input type="text" name="nombre-completo" id="nombre-completo" required><br>
+        <input type="text" name="nombre-completo" id="nombre-completo" required pattern="[a-zA-Z ]" title="Ingresa tu nombre completo."><br>
 
         <label for="correo-electronico">Correo electrónico: </label>
-        <input type="text" name="correo-electrónico" id="correo-electronico" required><br>
+        <input type="email" name="correo-electrónico" id="correo-electronico" required title="Ingresa tu correo electrónico para contactarte o enviarte información."><br>
 
         <label for="fecha-nacimiento">Fecha de Nacimiento: </label>
-        <input type="date" name="fecha-nacimiento"id="fecha-nacimiento" required><br>
+        <input type="date" name="fecha-nacimiento"id="fecha-nacimiento" required title="Ingresa tu fecha de nacimiento."><br>
 
         <label for="telefono">Número de teléfono: </label>
-        <input type="tel" name="telefono" id="telefono" required><br>
+        <input type="tel" name="telefono" id="telefono" pattern="[267][0-9]{7}" required title="Ingresa tu número telefónico para contactarte. (8 dígitos)"><br>
 
-        <label for="curso-interesado"></label>
+        <label for="curso-interesado">Curso de interés: </label>
+        <input id="curso-interesado" type="text" list="elegido" name="curso-interesado" required title="Elige el curso en el que estas interesado.">><br>
         <datalist id="elegido">
             <option value="Español"></option>
             <option value="Inglés"></option> 
@@ -56,10 +57,8 @@
             <option value="Alemán"></option>
         </datalist>
 
-        <label for="mensaje">Mensaje: </label>
-        <input type="text" name="mensaje" id="mensaje" required> <br>
-        <!--Intente usar textarea pero salía que el navegador no lo soportaba--> <!--This Browser is NOT supported WebSocket for Live-->
-        <!--textarea name="mensaje" name="mensaje" id="mensaje" rows="10" required > <br>-->
+        <label for="mensaje" style="display: block;">Mensaje: </label>
+        <textarea name="mensaje" id="mensaje" rows="10" cols="30" required title="Escribe tu mensaje."></textarea> <br>
 
         <input type="submit" value="Enviar">
 
