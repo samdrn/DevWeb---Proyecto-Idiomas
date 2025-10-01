@@ -19,7 +19,7 @@
   --ink: #0f172a;
   --muted: #475569;
   --card: #ffffff;
-  --shadow: 0 10px 30px rgba(2,6,23,.10);
+  --shadow: 0 8px 24px rgba(2,6,23,.08);
 }
 
 *{ box-sizing: border-box; }
@@ -29,15 +29,16 @@ body{
   color: var(--ink);
   background: var(--bg);
   font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.6;
 }
-img{ max-width: 100%; display: block; }
-h1,h2,h3{ margin: 0 0 .5rem; line-height: 1.15; color: var(--ink); }
+img{ max-width: 100%; display: block; border-radius: 6px;}
+h1,h2,h3{ margin: 0 0 .5rem; line-height: 1.2; color: var(--ink); }
 p{ margin: 0 0 1rem; color: var(--muted); }
 
 header{
   position: relative;
   z-index: 10;
-  background: linear-gradient(135deg, rgba(30,64,175,.35), rgba(124,58,237,.35));
+  background: linear-gradient(135deg, rgba(30,64,175,.95) 0%, rgba(59,130,246,.95) 50%,rgba(124,58,237,.95) 100%);
   backdrop-filter: blur(6px);
 }
 header .contenedor{
@@ -50,8 +51,9 @@ header .contenedor{
 }
 header h1{
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--on-primary);
+  letter-spacing: .2px;
 }
 header nav ul{
   list-style: none;
@@ -172,7 +174,7 @@ header nav a:focus-visible{
 
 
 #sorpresa{
-  padding: 0 24px 64px;
+  padding: 0 28px 64px;
 }
 #sorpresa > div{
   max-width: 1100px;
@@ -186,7 +188,7 @@ header nav a:focus-visible{
 #sorpresa h3{
   color: var(--primary-2);
   font-size: 22px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 #sorpresa p{
   margin: 0;
@@ -196,7 +198,390 @@ header nav a:focus-visible{
    Footer
  */
 footer{
+  font-size: 14px;
   text-align: center;
   padding: 40px 24px 60px;
   color: #64748b;
+}
+
+/* Pagina de nosotros */
+
+/* sobre_nosotros */
+#sobre_nosotros{
+  background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(59,130,246,.05));
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#sobre_nosotros h1{
+  color: var(--primary-3);
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 16px;
+}
+
+#sobre_nosotros p{
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+/* mision_vision */
+#mision_vision{
+  background: #ffffff;
+  padding: 40px 20px;
+  display: grid;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#mision_vision h2{
+  text-align: center;
+  color: var(--primary-4);
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+#mision_vision p{
+  text-align: center;
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Pagina de acerca de */
+
+/* encabezado */
+#encabezado{
+  background: linear-gradient(135deg, var(--primary-4), var(--primary));
+  padding: clamp(56px, 10vw, 120px) 24px;
+  text-align: center;
+  color: var(--on-primary);
+}
+
+#encabezado h1{
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin-bottom: 16px;
+}
+
+#encabezado p{
+  color: rgba(255,255,255,.92);
+  max-width: 800px;
+  margin-inline: 0 auto 12px;
+  font-size: clamp(16px, 2.2vw, 18px);
+}
+
+/* seccion creadores */
+#creadores{
+  padding: 48px 24px 80px;
+  background: var(--bg);
+}
+
+#fundadores{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#fundadores > div{
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px 16px;
+  text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#fundadores > div:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(2,6,23,.12);
+}
+
+#fundadores h3{
+  color: var(--primary-4);
+  font-size: 20px;
+  margin: 12px 0 8px;
+}
+
+/* preguntas frecuentes */
+#preguntas{
+  background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(59,130,246,.05));
+  padding: 60px 20px;
+}
+
+#habituales{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#habituales > div{
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px 16px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#habituales > div:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(2,6,23,.1);
+}
+
+#habituales h3{
+  color: var(--primary-4);
+  font-size: 20px;
+  margin: 8px;
+}
+
+#habituales p{
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Pagina de clases disponibles */
+
+/* niveles */
+.nivel{
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px 16px;
+  margin-bottom: 24px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.nivel:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(2,6,23,.12);
+}
+
+.nivel h2{
+  color: var(--primary-3);
+  font-size: 22px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.nivel h3{
+  text-align: center;
+  color: var(--primary-2);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.nivel ul{
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.nivel ul li{
+  padding: 4px 0;
+  color: var(--muted);
+}
+
+/* Pagina de contacto */
+/* informacion */
+#informacion{
+  background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(59,130,246,.05));
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#container-informacion{
+  background: var(--card);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+#container-informacion h3{
+  color: var(--primary-4);
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+#container-informacion p{
+  font-size: 18px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* formulario */
+#formulario{
+  background: var(--card);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  display: flex;
+  gap: 16px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  flex-direction: column;
+}
+
+#formulario label{
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+#formulario input[type="text"],
+#formulario input[type="email"],
+#formulario input[type="date"],
+#formulario input[type="tel"],
+#formulario textarea{
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+#formulario input[type="submit"]{
+  background: linear-gradient(180deg, var(--primary-3), var(--primary-2));
+  color: var(--on-primary);
+  font-weight: 700;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(59,130,246,.25), inset 0 1px 0 rgba(255,255,255,.15);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+#formulario input[type="submit"]:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 30px rgba(59,130,246,.35);
+}
+
+/* Pagina de precios */
+
+/* precios en niveles */
+#basico, #medio, #avanzado{
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 24px 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#basico{
+  background: rgba(124,58,237,0.08);
+}
+
+#medio{
+  background: rgba(59,130,246,0.08);
+}
+
+#avanzado{
+  background: rgba(30,64,175,0.08);
+}
+
+#basico:hover, #medio:hover, #avanzado:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(2,6,23,.12);
+}
+
+#basico h1, #medio h1, #avanzado h1{
+  color: var(--primary-4);
+  font-size: clamp(24px, 5vw, 32px);
+  margin-bottom: 16px;
+}
+
+#basico ul, #medio ul, #avanzado ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0;
+}
+
+#basico ul li, #medio ul li, #avanzado ul li{
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* Pagina de testimonios */
+
+/* testimonio */
+.testimonio{
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin: 16px 0;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.testimonio:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(2,6,23,.12);
+}
+
+.testimonio p{
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.testimonio .nombre{
+  font-weight: 700;
+  color: var(--primary-3);
+  font-size: 16px;
+}
+
+/* Pagina de galeria */
+
+/* museo */
+
+#museo{
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+#museo div{
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 16px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#museo div:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(2,6,23,.12);
+}
+
+#museo p{
+  font-weight: 600;
+  margin-top: 8px;
+  color: var(--primary-3);
 }
