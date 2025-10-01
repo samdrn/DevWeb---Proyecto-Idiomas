@@ -274,7 +274,7 @@ footer{
 #encabezado p{
   color: rgba(255,255,255,.92);
   max-width: 800px;
-  margin-inline: 0 auto 12px;
+  margin: 0 auto 12px;
   font-size: clamp(16px, 2.2vw, 18px);
 }
 
