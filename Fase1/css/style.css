@@ -354,6 +354,14 @@ footer{
 /* Pagina de clases disponibles */
 
 /* niveles */
+
+#espanol, #ingles, #frances, #aleman, #italiano{
+  text-align: center;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px 80px;
+}
+
 .nivel{
   background: var(--card);
   border-radius: 16px;
