@@ -1,5 +1,6 @@
 /* Paleta de colores (me la pasó samuel)*/
 :root{
+  --gallery-img-h: 260px;
   /* principal */
   --naranja: #FF6A00;
   --carmesi: #c8102e;
@@ -586,8 +587,12 @@ footer{
   margin: 40px auto;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+}
+
+#museo > #logo{
+  max-width: 900px;
+  margin: 0 auto 28px;
+  text-align: center;
 }
 
 #museo div{
@@ -608,6 +613,75 @@ footer{
   font-weight: 600;
   margin-top: 8px;
   color: var(--primary-2);
+}
+
+#museo img, #museo > div img {
+  width: 100%;
+  height: var(--gallery-img-h);
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  border-radius: 10px;
+}
+
+#museo > div:first-child {
+  grid-column: span 2;
+}
+
+#museo > div#logo {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin-bottom: 10px;
+}
+
+#museo > div:not(#logo) {
+  grid-row: 2;
+} 
+
+#museo > div#logo img {
+  height: calc(var(--gallery-img-h) * 2.5);
+  object-fit: contain;
+}
+
+#logo img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+#galeria {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+#galeria .card {
+  min-width: 260px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  text-align: center;
+  flex: 1 1 0;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#galeria .card img{
+  width: 100%;
+  height: var(--gallery-img-h);
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+#galeria .card p{
+  margin-top: 12px;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 /* Media Queries */
@@ -636,11 +710,24 @@ footer{
   #museo{
     gap: 18px;
   }
+
+  #galeria{
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  #galeria .card{
+    min-width: 220px;
+    flex: 1 1 calc(33.33% - 18px);
+  }
 }
 
 /* Ajustes para pantallas de tablet y celular */
 
 @media (max-width: 768px){
+  :root{
+    --gallery-img-h: 200px;
+  }
   header .contenedor{
     flex-direction: column;
     align-items: flex-start;
@@ -690,15 +777,32 @@ footer{
     padding: 0 16px;
   }
 
+  #museo > div#logo {
+    grid-column: 1 / -1;
+  }
+
+  #museo > div:first-child {
+    grid-column: auto;
+  }
+
   .testimonio{
     margin: 12px 0;
     padding: 18px;
+  }
+
+  #galeria .card{
+    min-width: 160px;
+    flex: 1 1 calc(50% - 14px);
   }
 }
 
 
 /* Ajustes para pantallas de celular peque */
 @media (max-width: 480px){
+  :root{
+    --gallery-img-h: 160px;
+  }
+
   body{
     font-size: 15px;
   }
@@ -712,7 +816,7 @@ footer{
     font-size: 15px;
     line-height: 1.5;
   }
-  
+
   header nav ul{
     gap: 8px;
     flex-wrap: wrap;
@@ -722,6 +826,10 @@ footer{
     padding: 12px;
     font-size: 15px;
   }
+
+  #museo {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
   #formulario input[type="text"],
   #formulario input[type="email"],
   #formulario input[type="date"],
@@ -729,5 +837,14 @@ footer{
   #formulario textarea{
     padding: 10px 12px;
     font-size: 15px;
+  }
+
+  #galeria {
+    gap: 12px;
+  }
+
+  #galeria .card {
+    min-width: 140px;
+    flex: 1 1 100%;
   }
 }
