@@ -1,28 +1,42 @@
 /* Paleta de colores (me la pasó samuel)*/
 :root{
   /* principal */
-  --purple: #7C3AED;
-  --blue-purple: #6D28D9;
-  --blue: #3B82F6;
-  --dark-blue: #1E40AF;
+  --naranja: #FF6A00;
+  --carmesi: #c8102e;
+  --cafe-claro: #D9B99B;
+  --cafe-oscuro: #4b2E2A;
+  --cafe-mid: #6B4226;
 
   /* variantes */
-  --primary: var(--purple);
-  --primary-2: var(--blue-purple);
-  --primary-3: var(--blue);
-  --primary-4: var(--dark-blue);
-
+  --primary: var(--naranja);
+  --primary-2: var(--carmesi);
+  --primary-3: var(--cafe-mid);
+  --primary-4: var(--cafe-oscuro);
+  --surface: var(--cafe-claro);
+  --bg: #fff3ec;
+  --ink: #241919;
+  --muted: #6b4f45;
+  --shadow: 0 8px 24px rgba(36, 25, 25,.08);
   --on-primary: #ffffff;
-  --bg: #ffffff;
-
-  /* extras */
-  --ink: #0f172a;
-  --muted: #475569;
-  --card: #ffffff;
-  --shadow: 0 8px 24px rgba(2,6,23,.08);
 }
 
 *{ box-sizing: border-box; }
+
+.logo{
+  text-decoration: none;
+  color: var(--on-primary);
+  font-weight: 800;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.logo:hover,
+.logo:focus {
+  text-decoration: none;
+  opacity: 0.95;
+}
+
 html,body{ height: 100%; }
 body{
   margin: 0;
@@ -31,6 +45,7 @@ body{
   font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
   line-height: 1.6;
 }
+
 img{ max-width: 100%; display: block; border-radius: 6px;}
 h1,h2,h3{ margin: 0 0 .5rem; line-height: 1.2; color: var(--ink); }
 p{ margin: 0 0 1rem; color: var(--muted); }
@@ -38,9 +53,10 @@ p{ margin: 0 0 1rem; color: var(--muted); }
 header{
   position: relative;
   z-index: 10;
-  background: linear-gradient(135deg, rgba(30,64,175,.95) 0%, rgba(59,130,246,.95) 50%,rgba(124,58,237,.95) 100%);
+  background: linear-gradient(135deg, var(--primary-4) 0%, var(--primary) 50%, var(--primary-2) 100%);
   backdrop-filter: blur(6px);
 }
+
 header .contenedor{
   max-width: 1200px;
   margin: 0 auto;
@@ -107,18 +123,18 @@ header nav a:focus-visible{
   margin: 20px 10px 0;
   padding: 14px 24px;
   border-radius: 12px;
-  background: linear-gradient(180deg, var(--primary-3), var(--primary-2));
+  background: linear-gradient(180deg, var(--primary), var(--primary-2));
   color: var(--on-primary);
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 10px 20px rgba(59,130,246,.25), inset 0 1px 0 rgba(255,255,255,.15);
+  box-shadow: 0 10px 20px rgba(200, 80, 40,.25), inset 0 1px 0 rgba(255,255,255,.15);
   transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
 }
 #introduccion .boton:hover,
 #introduccion .boton:focus-visible{
   transform: translateY(-2px);
   filter: brightness(1.03);
-  box-shadow: 0 14px 30px rgba(59,130,246,.35);
+  box-shadow: 0 14px 30px rgba(200, 80, 40,.25);
 }
 
 
@@ -136,7 +152,7 @@ header nav a:focus-visible{
 }
 #diferencias h2{
   text-align: center;
-  color: var(--dark-blue);
+  color: var(--primary-4);
   font-size: clamp(24px, 4vw, 32px);
   margin-bottom: 8px;
 }
@@ -164,7 +180,7 @@ header nav a:focus-visible{
   box-shadow: 0 20px 40px rgba(2,6,23,.12);
 }
 #beneficios > div h3{
-  color: var(--primary-4);
+  color: var(--primary);
   font-size: 20px;
   margin-bottom: 8px;
 }
@@ -181,8 +197,8 @@ header nav a:focus-visible{
   margin: 0 auto;
   padding: 24px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(59,130,246,.08));
-  border: 1px solid rgba(30,64,175,.15);
+  background: linear-gradient(135deg, rgba(255, 106, 0, .08), rgba(200, 16, 46, .08));
+  border: 1px solid rgba(75, 46, 42,.15);
   text-align: center;
 }
 #sorpresa h3{
@@ -208,13 +224,13 @@ footer{
 
 /* sobre_nosotros */
 #sobre_nosotros{
-  background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(59,130,246,.05));
+  background: linear-gradient(135deg, rgba(200, 16, 46, .05), rgba(255, 106, 0, .05));
   padding: 60px 20px;
   text-align: center;
 }
 
 #sobre_nosotros h1{
-  color: var(--primary-3);
+  color: var(--primary);
   font-size: clamp(28px, 5vw, 40px);
   margin-bottom: 16px;
 }
@@ -404,7 +420,7 @@ footer{
 /* Pagina de contacto */
 /* informacion */
 #informacion{
-  background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(59,130,246,.05));
+  background: linear-gradient(135deg, rgba(255, 106, 0, .05), rgba(200, 16, 46, .05));
   padding: 60px 20px;
   text-align: center;
 }
@@ -466,21 +482,21 @@ footer{
 }
 
 #formulario input[type="submit"]{
-  background: linear-gradient(180deg, var(--primary-3), var(--primary-2));
+  background: linear-gradient(180deg, var(--primary), var(--primary-2));
   color: var(--on-primary);
   font-weight: 700;
   border: none;
   padding: 14px;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(59,130,246,.25), inset 0 1px 0 rgba(255,255,255,.15);
+  box-shadow: 0 10px 20px rgba(200, 80, 40, .25), inset 0 1px 0 rgba(255,255,255,.15);
   transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
 }
 
 #formulario input[type="submit"]:hover{
   transform: translateY(-2px);
   filter: brightness(1.03);
-  box-shadow: 0 14px 30px rgba(59,130,246,.35);
+  box-shadow: 0 14px 30px rgba(200, 80, 40, .35);
 }
 
 /* Pagina de precios */
@@ -497,15 +513,15 @@ footer{
 }
 
 #basico{
-  background: rgba(124,58,237,0.08);
+  background: rgba(255, 106, 0, 0.08);
 }
 
 #medio{
-  background: rgba(59,130,246,0.08);
+  background: rgba(255, 106, 0, 0.08);
 }
 
 #avanzado{
-  background: rgba(30,64,175,0.08);
+  background: rgba(255, 106, 0, 0.08);
 }
 
 #basico:hover, #medio:hover, #avanzado:hover{
@@ -557,7 +573,7 @@ footer{
 
 .testimonio .nombre{
   font-weight: 700;
-  color: var(--primary-3);
+  color: var(--primary);
   font-size: 16px;
 }
 
@@ -591,7 +607,7 @@ footer{
 #museo p{
   font-weight: 600;
   margin-top: 8px;
-  color: var(--primary-3);
+  color: var(--primary-2);
 }
 
 /* Media Queries */
