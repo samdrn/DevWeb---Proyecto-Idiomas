@@ -790,9 +790,20 @@ footer{
     padding: 18px;
   }
 
+  #galeria{
+    gap: 16px;
+    flex-direction: column;
+  }
+
   #galeria .card{
-    min-width: 160px;
+    min-width: auto;
     flex: 1 1 calc(50% - 14px);
+  }
+
+  #museo img, #museo > div img, #galeria .card img{
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
   }
 }
 
@@ -846,5 +857,13 @@ footer{
   #galeria .card {
     min-width: 140px;
     flex: 1 1 100%;
+  }
+
+  #museo img, #museo > div img, #galeria .card img{
+    max-height: 160px;
+  }
+
+  #myseo > div#logo img {
+    max-height: 140px;
   }
 }
