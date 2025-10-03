@@ -627,7 +627,7 @@ footer{
     padding: 36px 18px 56px;
   }
   #beneficios{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
   #fundadores > div, #habituales > div{
@@ -653,6 +653,7 @@ footer{
     width: 100%;
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
     justify-content: flex-start;
   }
   #introduccion > div{
@@ -701,11 +702,9 @@ footer{
   body{
     font-size: 15px;
   }
-
   header h1{
     font-size: 16px;
   }
-
   #introduccion h2{
     font-size: 28px;
   }
@@ -716,13 +715,13 @@ footer{
   
   header nav ul{
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   #formulario input[type="submit"]{
     padding: 12px;
     font-size: 15px;
   }
-
   #formulario input[type="text"],
   #formulario input[type="email"],
   #formulario input[type="date"],
