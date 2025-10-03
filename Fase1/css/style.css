@@ -593,3 +593,126 @@ footer{
   margin-top: 8px;
   color: var(--primary-3);
 }
+
+/* Media Queries */
+
+/* Ajustes para pantalla de compu*/
+@media (max-width: 1024px){
+  header .contenedor{
+    padding: 14px 20px;
+  }
+  header nav ul{
+    gap: clamp(10px, 3vw, 20px);
+  }
+  #introduccion > div{
+    padding: clamp(40px, 8vw, 80px) 20px;
+  }
+  #diferencias > div{
+    padding: 36px 18px 56px;
+  }
+  #beneficios{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  #fundadores > div, #habituales > div{
+    padding: 20px 14px;
+  }
+  #museo{
+    gap: 18px;
+  }
+}
+
+/* Ajustes para pantallas de tablet y celular */
+
+@media (max-width: 768px){
+  header .contenedor{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  header h1{
+    font-size: 18px;
+  }
+  header nav ul{
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  #introduccion > div{
+    padding: clamp(28px, 8vw, 56px) 16px;
+    text-align: center;
+  }
+
+  #beneficios{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #fundadores, #habituales{
+    grid-template-columns: 1fr;
+  }
+
+  #formulario{
+    margin: 24px;
+    padding: 20px;
+  }
+
+  .nivel{
+    padding: 20px 12px;
+  }
+
+  #basico, #medio, #avanzado{
+    margin: 24px 16px;
+    padding: 20px;
+  }
+
+  #museo{
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    padding: 0 16px;
+  }
+
+  .testimonio{
+    margin: 12px 0;
+    padding: 18px;
+  }
+}
+
+
+/* Ajustes para pantallas de celular peque */
+@media (max-width: 480px){
+  body{
+    font-size: 15px;
+  }
+
+  header h1{
+    font-size: 16px;
+  }
+
+  #introduccion h2{
+    font-size: 28px;
+  }
+  #introduccion p, #sobre_nosotros p, #mision_vision p{
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  header nav ul{
+    gap: 8px;
+  }
+
+  #formulario input[type="submit"]{
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  #formulario input[type="text"],
+  #formulario input[type="email"],
+  #formulario input[type="date"],
+  #formulario input[type="tel"],
+  #formulario textarea{
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+}
