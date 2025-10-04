@@ -587,6 +587,8 @@ footer{
   margin: 40px auto;
   padding: 0 24px;
   display: grid;
+  min-height: auto;
+  padding-bottom: 40px;
 }
 
 #museo > #logo{
@@ -655,8 +657,8 @@ footer{
   display: flex;
   gap: 24px;
   align-items: stretch;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #galeria .card {
@@ -774,7 +776,7 @@ footer{
   #museo{
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 14px;
-    padding: 0 16px;
+    padding: 0 16px 30px;
   }
 
   #museo > div#logo {
@@ -792,6 +794,11 @@ footer{
 
   #galeria{
     gap: 16px;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
   }
 
@@ -804,6 +811,10 @@ footer{
     height: auto;
     max-height: 200px;
     object-fit: contain;
+  }
+
+  footer{
+    margin-top: auto;
   }
 }
 
