@@ -690,12 +690,88 @@ footer{
   font-weight: 600;
 }
 
+#checkMenu{
+    display: none;
+  }
+
+.labelBotonMenu{
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--on-primary);
+  z-index: 1000;
+}
+
+
+  
 /* Media Queries */
 
 /* Ajustes para pantalla de compu*/
 @media (max-width: 1024px){
+  
+  .labelBotonMenu{
+    display: block;
+    top: 5px;
+    position: absolute;
+    right: 20px;
+  }
+
+  #btnOcultar{
+    display: none;}
+
+  nav{
+    position: fixed;
+    top: 0;
+    padding-top: 60px;
+    right: -100%;
+    height: 100vh;
+    width: 240px;
+    z-index: 999;
+    background: linear-gradient(135deg, var(--primary-4) 0%, var(--primary) 50%, var(--primary-2) 100%);
+    transition: right 0.3s ease;
+  }
+
+  nav ul{
+    flex-direction: column;
+    padding: 20px;
+    gap: 0;
+  }
+
+  nav ul li{
+    border-bottom: 1px solid var(--primary-4);
+  }
+
+  nav a{
+    display: block;
+    color: white;
+    padding: 15px;
+  }
+
+  #checkMenu:not(:checked) ~ nav{
+    right:-100%
+  }
+
+  #checkMenu:checked ~ nav{
+    right: 0;
+  }
+
+  #checkMenu:checked ~ .labelBotonMenu #btnMostrar
+  {
+    display: none;
+  }
+
+  #checkMenu:checked ~ .labelBotonMenu #btnOcultar
+  {
+    display: block;
+  }
+
+  header{
+    position: relative;
+  }
+
   header .contenedor{
-    padding: 14px 20px;
+    position: relative;
+
   }
   header nav ul{
     gap: clamp(10px, 3vw, 20px);
@@ -726,6 +802,8 @@ footer{
     min-width: 220px;
     flex: 1 1 calc(33.33% - 18px);
   }
+
+
 }
 
 /* Ajustes para pantallas de tablet y celular */
@@ -734,6 +812,78 @@ footer{
   :root{
     --gallery-img-h: 200px;
   }
+
+.labelBotonMenu{
+    display: block;
+    top: 18px;
+    position: absolute;
+    right: 20px;
+  }
+
+  #btnOcultar{
+    display: none;}
+
+  nav{
+    position: fixed;
+    top: 0;
+    padding-top: 70px;
+    right: -100%;
+    height: 100vh;
+    width: 220px;
+    z-index: 999;
+    background: linear-gradient(135deg, var(--primary-4) 0%, var(--primary) 50%, var(--primary-2) 100%);
+    transition: right 0.3s ease;
+  }
+
+  nav ul{
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 0;
+    margin: 0;
+  }
+
+  nav ul li{
+    border-bottom: 1px solid var(--primary-4);
+  }
+
+  nav ul li:last-child{
+    border-bottom: none;
+  }
+
+  nav a{
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  #checkMenu:not(:checked) ~ nav{
+    right:-100%
+  }
+
+  #checkMenu:checked ~ nav{
+    right: 0;
+  }
+
+  #checkMenu:checked ~ .labelBotonMenu #btnMostrar
+  {
+    display: none;
+  }
+
+  #checkMenu:checked ~ .labelBotonMenu #btnOcultar
+  {
+    display: block;
+  }
+
+  header{
+    position: relative;
+  }
+
+  header .contenedor{
+    position: relative;
+
+  }
+
   header .contenedor{
     flex-direction: column;
     align-items: flex-start;
@@ -844,6 +994,77 @@ footer{
   #introduccion p, #sobre_nosotros p, #mision_vision p{
     font-size: 15px;
     line-height: 1.5;
+  }
+
+  
+.labelBotonMenu{
+    top: 7px;
+    font-size: 22px;
+    right: 16px;
+  }
+
+  #btnOcultar{
+    display: none;}
+
+  nav{
+    position: fixed;
+    top: 30;
+    padding-top: 60px;
+    right: -100%;
+    height: 100vh;
+    width: 200px;
+    z-index: 999;
+    background: linear-gradient(135deg, var(--primary-4) 0%, var(--primary) 50%, var(--primary-2) 100%);
+    transition: right 0.3s ease;
+  }
+
+  nav ul{
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 0;
+    margin: 0;
+  }
+
+  nav ul li{
+    border-bottom: 1px solid var(--primary-4);
+  }
+
+  nav ul li:last-child{
+    border-bottom: none;
+  }
+
+  nav a{
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  #checkMenu:not(:checked) ~ nav{
+    right:-100%
+  }
+
+  #checkMenu:checked ~ nav{
+    right: 0;
+  }
+
+  #checkMenu:checked ~ .labelBotonMenu #btnMostrar
+  {
+    display: none;
+  }
+
+  #checkMenu:checked ~ .labelBotonMenu #btnOcultar
+  {
+    display: block;
+  }
+
+  header{
+    position: relative;
+  }
+
+  header .contenedor{
+    position: relative;
+
   }
 
   header nav ul{
