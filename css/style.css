@@ -765,6 +765,34 @@ footer{
   font-size: 24px;
   color: var(--on-primary);
   z-index: 1000;
+  top: 8px;
+  right: 40px;
+  z-index: 1001;
+}
+
+#checkMenu:checked ~ .labelBotonMenu{
+  right: 20px;
+  top: 8px;
+  color: white;
+}
+
+
+
+@media(max-width:1024px){
+  .labelBotonMenu{
+    display: block;
+      top: 8px;
+      position: absolute;
+      right: 20px;
+  }
+
+  nav{
+    display: none;
+  }
+
+  #checkMenu:checked ~nav{
+    display: block;
+  }
 }
 
 
@@ -776,7 +804,7 @@ footer{
   
   .labelBotonMenu{
     display: block;
-    top: 5px;
+    top: 8px;
     position: absolute;
     right: 20px;
   }
@@ -787,7 +815,7 @@ footer{
   nav{
     position: fixed;
     top: 0;
-    padding-top: 60px;
+    padding-top: 100px;
     right: -100%;
     height: 100vh;
     width: 240px;
@@ -879,11 +907,17 @@ footer{
   }
 
 .labelBotonMenu{
-    display: block;
     top: 8px;
     position: absolute;
     right: 20px;
   }
+
+  
+  #checkMenu:checked ~ .labelBotonMenu
+  {
+    top: 8px;
+  }
+
 
   #btnOcultar{
     display: none;}
@@ -1063,9 +1097,16 @@ footer{
 
   
 .labelBotonMenu{
-    top: 7px;
+    top: 8x;
     font-size: 22px;
     right: 16px;
+
+  }
+
+  
+  #checkMenu:checked ~ .labelBotonMenu
+  {
+    top: 8px;
   }
 
   #btnOcultar{
@@ -1073,7 +1114,7 @@ footer{
 
   nav{
     position: fixed;
-    top: 30px;
+    top: 0px;
     padding-top: 60px;
     right: -100%;
     height: 100vh;
@@ -1170,3 +1211,5 @@ footer{
     max-height: 140px;
   }
 }
+
+
