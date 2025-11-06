@@ -551,13 +551,35 @@ footer{
 /* Pagina de testimonios */
 
 /* testimonio */
+
+.testimonios{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 25px 60px;
+}
+
+.testimonios h1{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .testimonio{
   background: var(--card);
   border-radius: 16px;
   box-shadow: var(--shadow);
-  padding: 24px;
-  margin: 16px 0;
+  padding: 28px 24px;
+  margin: 20px 0;
   transition: transform .18s ease, box-shadow .18s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  flex-direction: row-reverse;
+}
+
+.testimonio .reflexion{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .testimonio:hover{
@@ -570,13 +592,56 @@ footer{
   color: var(--muted);
   line-height: 1.6;
   margin-bottom: 12px;
+  font-style: italic;
+  text-align: left;
+  flex: 1;
 }
 
 .testimonio .nombre{
   font-weight: 700;
   color: var(--primary);
   font-size: 16px;
+  margin: 0;
+  text-align: left;
 }
+
+.icono{
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  flex-shrink: 0;
+}
+
+.icono i{
+  font-size: 40px;
+  color: white;
+}
+
+.testimonios .testimonio:nth-child(2) .icono{
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+}
+
+.testimonios .testimonio:nth-child(3) .icono{
+  background: linear-gradient(135deg, var(--primary-3), var(--primary-4));
+}
+
+.testimonios .testimonio:nth-child(4) .icono{
+  background: linear-gradient(135deg, var(--primary), var(--primary-3));
+}
+
+.testimonios .testimonio:nth-child(5) .icono{
+  background: linear-gradient(135deg, var(--primary-2), var(--primary-4));
+}
+
+.testimonios .testimonio:nth-child(6) .icono{
+  background: linear-gradient(135deg, var(--primary-3), var(--primary-2));
+}
+
+
 
 /* Pagina de galeria */
 
