@@ -873,7 +873,7 @@ footer{
 
 /* Ajustes para pantallas de tablet y celular */
 
-@media (max-width: 768px){
+@media (min-width:481px) and (max-width: 768px){
   :root{
     --gallery-img-h: 200px;
   }
@@ -1073,7 +1073,7 @@ footer{
 
   nav{
     position: fixed;
-    top: 30;
+    top: 30px;
     padding-top: 60px;
     right: -100%;
     height: 100vh;
