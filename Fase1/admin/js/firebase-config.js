@@ -9,15 +9,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-// 2️⃣ Tu configuración de Firebase (obtenida desde Firebase Console) //HAY QUE DESDE LA API A MEASUREMENT PERO HASTA QUE ALGUIEN CREE EL FIREBASE
+// 2️⃣ Tu configuración de Firebase (obtenida desde Firebase Console) //HAY QUE COPIAR DESDE LA API A MEASUREMENT PERO HASTA QUE ALGUIEN CREE EL FIREBASE
 const firebaseConfig = {
-    apiKey: "AIzaSyAVU-3qRRT0bZLyNAa0zwFZKsP0EVyTk2w",
-    authDomain: "fir-b6e20.firebaseapp.com",
-    projectId: "fir-b6e20",
-    storageBucket: "fir-b6e20.firebasestorage.app",
-    messagingSenderId: "311563666369",
-    appId: "1:311563666369:web:6ce1128b5293cbc7056540",
-    measurementId: "G-RBF8D401DS"
+
 };
 
 // 3️⃣ Inicializar Firebase con tu configuración
