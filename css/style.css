@@ -502,50 +502,81 @@ footer{
 
 /* Pagina de precios */
 
-/* precios en niveles */
-#basico, #medio, #avanzado{
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 24px 20px;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+#seccion-lenguaje-selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   text-align: center;
-  transition: transform .18s ease, box-shadow .18s ease;
+  padding: 20px;
+  background: var(--bg);
 }
 
-#basico{
-  background: rgba(255, 106, 0, 0.08);
-}
-
-#medio{
-  background: rgba(255, 106, 0, 0.08);
-}
-
-#avanzado{
-  background: rgba(255, 106, 0, 0.08);
-}
-
-#basico:hover, #medio:hover, #avanzado:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(2,6,23,.12);
-}
-
-#basico h1, #medio h1, #avanzado h1{
+#language-selector-section h2 {
   color: var(--primary-4);
-  font-size: clamp(24px, 5vw, 32px);
-  margin-bottom: 16px;
+  font-size: clamp(32px, 6vw, 48px);
+  margin-bottom: 32px;
 }
 
-#basico ul, #medio ul, #avanzado ul{
+.language-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.boton-idioma {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-2));
+  color: var(--on-primary);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 15px rgba(200, 80, 40,.2);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.language-button:hover,
+.language-button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(200, 80, 40,.3);
+}
+
+/* Estilos para las nuevas secciones de idiomas */
+#espanol, #ingles, #frances, #aleman, #italiano {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 106, 0, 0.08);
+  border-bottom: 1px solid rgba(75, 46, 42, .1);
+  scroll-margin-top: 0; 
+}
+
+#espanol h1, #ingles h1, #frances h1, #aleman h1, #italiano h1 {
+  color: var(--primary-4);
+  font-size: clamp(32px, 6vw, 48px);
+  margin-bottom: 24px;
+}
+
+#espanol ul, #ingles ul, #frances ul, #aleman ul, #italiano ul {
   list-style: none;
   padding: 0;
-  margin: 0 0;
+  margin: 0;
 }
 
-#basico ul li, #medio ul li, #avanzado ul li{
-  padding: 8px 0;
+#espanol ul li, #ingles ul li, #frances ul li, #aleman ul li, #italiano ul li {
+  padding: 10px 0;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* Pagina de testimonios */
