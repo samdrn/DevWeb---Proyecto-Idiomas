@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia de Idiomas</title>
+</head>
+<body>
+    <header>
+        <p>Academia de Idiomas</p>
+        <a href="login.html">Salir de Sesion</a>
+    </header>
+    <div id="idContenedorFormulario">
+        <h1>Registro de clases</h1>
+        <form id="idForm">
+            <div class="fila">
+                <select class="form-select" id="idCmbIdioma" aria-label="Idioma">
+                    <option value="0" selected>Seleccione un idioma</option>
+                    <option value="1">Español</option>
+                    <option value="2">Ingles</option>
+                    <option value="3">Frances</option>
+                    <option value="4">Italiano</option>
+                    <option value="5">Alemán</option>
+                </select>
+                <select class="form-select" id="idCmbNivel" aria-label="Idioma">
+                    <option value="0" selected>Seleccione un nivel</option>
+                    <option value="1">Bajo</option>
+                    <option value="2">Medio</option>
+                    <option value="3">Alto</option>
+                </select>
+            </div>
+            <div class="fila">
+                <select class="form-select" id="idCmbProfesor">
+                    <option value="0" selected>Seleccione un profesor</option>
+                </select>
+            </div>
+            <div class="fila">
+                <div class="contenedor-tiempo">
+                    <label>Tiempo de inicio</label>
+                    <input id="idTiempoInicio" type="time" class="time-input" min="6:00" max="20:00">
+                    <small>Se pueden registrar clases entre 6:00 A.M. y 8:00 P.M.</small>
+                </div>
+                <div class="contenedor-tiempo">
+                    <label>Tiempo de finalización</label>
+                    <input id="idTiempoFinalzación" type="time" class="time-input" min="6:00" max="20:00">
+                    <small>Se pueden registrar clases entre 6:00 A.M. y 8:00 P.M.</small>
+                </div>
+            </div>
+            <div class="fila">
+                <select name="form-select" id="idCmbEstudiantes">
+                    <option value="0">Seleccione un estudiante</option>
+                </select>
+                <!--Cuando se presiona este boton, se debe verificar que el estudiante no este registrado en la lista
+                y luego añadido al ol que esta abajo-->
+                <button id="idBtnAgregarEstudiante">añadir estudiante</button>
+            </div>
+
+            <div class="contenedor-lista-estudiantes">
+                <h2>Estudiantes inscritos</h2>
+                <ol id="idListaEstudiantes">
+                    Ninguno
+                </ol>
+            </div>
+
+            <div class="fila">
+                <!-- Cuando se guarda un nuevo dato, ese dato debe aparecer en el select al que pertenece-->
+                <button id="idBtnNuevoIdioma">Nuevo Idioma</button>
+                <button id="idBtnNuevoNivel">Nuevo Nivel</button>
+            </div>
+
+            <div class="fila">
+                <button id="idBtnNuevoEstudiante">Nuevo Estudiante</button>
+                <button id="idBtnNuevoProfesor">Nuevo Profesor</button>
+            </div>
+
+            <div class="Fila">
+                <!--Cuando se presione este boton, se debe verificar que todos los datos ingresados sean validos, 
+                y luego guardar el grupo con los datos ingresados en el formulario-->
+                <button id="idBtnRegistrarGrupo">Registrar Grupo</button>
+            </div>
+
+        </form>
+    </div>
+
+
+</body>
+</html>
