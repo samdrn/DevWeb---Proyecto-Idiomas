@@ -95,9 +95,15 @@ header nav a:focus-visible{
 #introduccion{
   position: relative;
   color: var(--on-primary);
-  background: radial-gradient(1200px 500px at 70% -10%, var(--primary-3) 0%, transparent 60%),
-              linear-gradient(135deg, var(--primary-4), var(--primary));
+  background: linear-gradient(135deg, rgba(30,15,10,0.6), rgba(255,106,0,0.6)),
+  url("../img/idiomas.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s;
 }
+
+
 #introduccion > div{
 
   max-width: 1100px;
