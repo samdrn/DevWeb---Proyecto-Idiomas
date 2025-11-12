@@ -96,7 +96,7 @@ header nav a:focus-visible{
   position: relative;
   color: var(--on-primary);
   background: linear-gradient(135deg, rgba(30,15,10,0.6), rgba(255,106,0,0.6)),
-  url("../img/idiomas.jpg");
+  url("../img/idiomas.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -308,9 +308,11 @@ footer{
 
 /* encabezado */
 #encabezado{
-  background: linear-gradient(135deg, var(--primary-4), var(--primary));
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/acerca-de.png');
+  background-size: cover;
+  background-position: center;
   padding: clamp(56px, 10vw, 120px) 24px;
-  text-align: center;
+  text-align: justify;
   color: var(--on-primary);
 }
 
@@ -319,6 +321,9 @@ footer{
   font-weight: 800;
   letter-spacing: .2px;
   margin-bottom: 16px;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 #encabezado p{
@@ -326,6 +331,7 @@ footer{
   max-width: 800px;
   margin: 0 auto 12px;
   font-size: clamp(16px, 2.2vw, 18px);
+  text-align: justify;
 }
 
 /* seccion creadores */
@@ -407,8 +413,6 @@ footer{
 
 #espanol, #ingles, #frances, #aleman, #italiano{
   text-align: center;
-  max-width: 1100px;
-  margin: 40px auto;
   padding: 40px 24px;
 }
 
@@ -553,8 +557,8 @@ footer{
   background-position: center;
 }
 
-#language-selector-section h2 {
-  color: var(--primary-4);
+#seccion-lenguaje-selector h1 {
+  color: var(--bg);
   font-size: clamp(32px, 6vw, 48px);
   margin-bottom: 32px;
 }
@@ -588,13 +592,11 @@ footer{
 #espanol, #ingles, #frances, #aleman, #italiano {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  min-height: auto;
-  width: 100%;
-  max-width: 1100px;
-  margin:40px auto;
-  padding: 40px 20px;
+  min-height: 100vh;
+  min-width: max-content;
+  padding: auto;
   text-align: center;
   background: rgba(255, 106, 0, 0.08);
 }
