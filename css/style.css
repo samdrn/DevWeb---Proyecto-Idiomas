@@ -548,7 +548,9 @@ footer{
   min-height: 100vh;
   text-align: center;
   padding: 20px;
-  background: var(--bg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/background.png');
+  background-size: cover;
+  background-position: center;
 }
 
 #language-selector-section h2 {
@@ -1013,6 +1015,10 @@ footer{
   height: 250px;
 }
 
+#espanol, #ingles, #frances, #aleman, #italiano {
+    min-height: 100vh;
+  }
+
 }
 
 /* Ajustes para pantallas de tablet y celular */
@@ -1199,6 +1205,10 @@ footer{
   height: 250px;
 }
 
+#espanol, #ingles, #frances, #aleman, #italiano {
+    min-height: 100vh;
+  }
+
 }
 
 
@@ -1347,6 +1357,10 @@ footer{
 .imagen-sobre-mivi img{
   height:220px;
 }
+
+#espanol, #ingles, #frances, #aleman, #italiano {
+    min-height: 100vh;
+  }
 
 }
 
