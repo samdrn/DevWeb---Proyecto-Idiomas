@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Panel de Administrador - Academia de Idiomas</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
+=======
+    <title>Academia de Idiomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/estilo.css">
+>>>>>>> 5797bff08ddb373231ef33f010204dcc07a18e14
 </head>
 <body class="bg-light">
 
     <header class="navbar navbar-dark bg-primary px-3 mb-4">
         <span class="navbar-brand mb-0 h1">Academia de Idiomas</span>
+<<<<<<< HEAD
         <a href="../../index.html" class="btn btn-outline-light btn-sm">Salir de Sesion</a>
+=======
+        <a href="login.html" class="btn btn-outline-light btn-sm">Salir de Sesión</a>
+>>>>>>> 5797bff08ddb373231ef33f010204dcc07a18e14
     </header>
 
     <div id="idContenedorFormulario" class="container">
         <div class="card shadow-sm p-4 mb-5">
             <h1 class="text-center mb-4">Registro de clases</h1>
 
+<<<<<<< HEAD
         <form id="idForm" class="gy-3">
 
             <div class="row g-3 mb-3">
@@ -107,10 +118,112 @@
                     <button id="idBtnRegistrarGrupo" type="button" class="btn btn-outline-primary w-100">Registrar Grupo</button>
                 </div>
             </div>
+=======
+            <form id="idForm" class="gy-3">
 
-        </form>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="idCmbIdioma" class="form-label fw-bold">Idioma</label>
+                        <select class="form-select" id="idCmbIdioma">
+                            <option value="0" selected>Seleccione un idioma</option>
+                            <option value="1">Español</option>
+                            <option value="2">Inglés</option>
+                            <option value="3">Francés</option>
+                            <option value="4">Italiano</option>
+                            <option value="5">Alemán</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="idCmbNivel" class="form-label fw-bold">Nivel</label>
+                        <select class="form-select" id="idCmbNivel">
+                            <option value="0" selected>Seleccione un nivel</option>
+                            <option value="1">Bajo</option>
+                            <option value="2">Medio</option>
+                            <option value="3">Alto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-12">
+                        <label for="idCmbProfesor" class="form-label fw-bold">Profesor</label>
+                        <select class="form-select" id="idCmbProfesor">
+                            <option value="0" selected>Seleccione un profesor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Tiempo de inicio</label>
+                        <input id="idTiempoInicio" type="time" class="form-control" min="6:00" max="20:00">
+                        <small class="text-muted">Clases entre 6:00 A.M. y 8:00 P.M.</small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Tiempo de finalización</label>
+                        <input id="idTiempoFinalzación" type="time" class="form-control" min="6:00" max="20:00">
+                        <small class="text-muted">Clases entre 6:00 A.M. y 8:00 P.M.</small>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3 align-items-end">
+                    <div class="col-md-8">
+                        <label for="idCmbEstudiantes" class="form-label fw-bold">Estudiante</label>
+                        <select id="idCmbEstudiantes" class="form-select">
+                            <option value="0">Seleccione un estudiante</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <button id="idBtnAgregarEstudiante" type="button" class="btn btn-secondary w-100">
+                            Añadir estudiante
+                        </button>
+                    </div>
+                </div>
+>>>>>>> 5797bff08ddb373231ef33f010204dcc07a18e14
+
+                <div class="mb-4">
+                    <h2 class="h5 fw-bold">Estudiantes inscritos</h2>
+                    <div class="card p-3">
+                        <ol id="idListaEstudiantes" class="list-group list-group-numbered">
+                            <li class="list-group-item">Ninguno</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <button id="idBtnNuevoIdioma" type="button" class="btn btn-outline-primary w-100">Nuevo Idioma</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="idBtnNuevoNivel" type="button" class="btn btn-outline-primary w-100">Nuevo Nivel</button>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <button id="idBtnNuevoEstudiante" type="button" class="btn btn-outline-success w-100">Nuevo Estudiante</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="idBtnNuevoProfesor" type="button" class="btn btn-outline-success w-100">Nuevo Profesor</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <button id="idBtnRegistrarGrupo" type="button" class="btn btn-primary w-100">
+                            Registrar Grupo
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
 
+<<<<<<< HEAD
         <section class="mb-5">
             <h2 class="h4 fw-bold">Usuarios (profesores, estudiantes, admins)</h2>
             <div class="card p-3 shadow-sm">
@@ -128,5 +241,7 @@
     </div>
 
     <script type="module" src="../../Fase2/js/admin.js"></script>
+=======
+>>>>>>> 5797bff08ddb373231ef33f010204dcc07a18e14
 </body>
 </html>
