@@ -21,8 +21,8 @@ const idBtnRegistrarGrupo = document.getElementById("idBtnRegistrarGrupo");
 const tiempoInicioEl = document.getElementById("idTiempoInicio");
 const tiempoFinEl = document.getElementById("idTiempoFinalizacion");
 
-const idiomasTableRoot = document.getElementById("idiomasTable") || null;
-const nivelesTableRoot = document.getElementById("nivelesTable") || null;
+const idiomasTableRoot = document.getElementById("idiomasTable");
+const nivelesTableRoot = document.getElementById("nivelesTable");
 const gruposListRoot = document.getElementById("gruposList") || null;
 
 let estudiantesSeleccionados = [];
