@@ -3,85 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia de Idiomas</title>
+    <title>Panel de Administrador - Academia de Idiomas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body>
-    <header>
-        <p>Academia de Idiomas</p>
-        <a href="login.html">Salir de Sesion</a>
+<body class="bg-light">
+
+    <header class="navbar navbar-dark bg-primary px-3 mb-4">
+        <span class="navbar-brand mb-0 h1">Academia de Idiomas</span>
+        <a href="../../index.html" class="btn btn-outline-light btn-sm">Salir de Sesion</a>
     </header>
-    <div id="idContenedorFormulario">
-        <h1>Registro de clases</h1>
-        <form id="idForm">
-            <div class="fila">
-                <select class="form-select" id="idCmbIdioma" aria-label="Idioma">
-                    <option value="0" selected>Seleccione un idioma</option>
-                    <option value="1">Español</option>
-                    <option value="2">Ingles</option>
-                    <option value="3">Frances</option>
-                    <option value="4">Italiano</option>
-                    <option value="5">Alemán</option>
-                </select>
-                <select class="form-select" id="idCmbNivel" aria-label="Idioma">
-                    <option value="0" selected>Seleccione un nivel</option>
-                    <option value="1">Bajo</option>
-                    <option value="2">Medio</option>
-                    <option value="3">Alto</option>
-                </select>
-            </div>
-            <div class="fila">
-                <select class="form-select" id="idCmbProfesor">
-                    <option value="0" selected>Seleccione un profesor</option>
-                </select>
-            </div>
-            <div class="fila">
-                <div class="contenedor-tiempo">
-                    <label>Tiempo de inicio</label>
-                    <input id="idTiempoInicio" type="time" class="time-input" min="6:00" max="20:00">
-                    <small>Se pueden registrar clases entre 6:00 A.M. y 8:00 P.M.</small>
+
+    <div id="idContenedorFormulario" class="container">
+        <div class="card shadow-sm p-4 mb-5">
+            <h1 class="text-center mb-4">Registro de clases</h1>
+
+        <form id="idForm" class="gy-3">
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="idCmbIdioma" class="form-label fw-bold">Idioma</label>
+                    <select class="form-select" id="idCmbIdioma">
+                        <option value="0" selected>Seleccione un idioma</option>
+                    </select>
                 </div>
-                <div class="contenedor-tiempo">
-                    <label>Tiempo de finalización</label>
-                    <input id="idTiempoFinalzación" type="time" class="time-input" min="6:00" max="20:00">
-                    <small>Se pueden registrar clases entre 6:00 A.M. y 8:00 P.M.</small>
+
+                <div class="col-md-6">
+                    <label for="idCmbNivel" class="form-label fw-bold">Nivel</label>
+                    <select class="form-select" id="idCmbNivel">
+                        <option value="0">Seleccione un nivel</option>
+                    </select>
                 </div>
             </div>
-            <div class="fila">
-                <select name="form-select" id="idCmbEstudiantes">
-                    <option value="0">Seleccione un estudiante</option>
-                </select>
-                <!--Cuando se presiona este boton, se debe verificar que el estudiante no este registrado en la lista
-                y luego añadido al ol que esta abajo-->
-                <button id="idBtnAgregarEstudiante">añadir estudiante</button>
+
+            <div class="row g-3 mb-3">
+                <div class="col-12">
+                    <label for="idCmbProfesor" class="form-label fw-bold">Profesor</label>
+                    <select class="form-select" id="idCmbProfesor">
+                        <option value="0" selected>Seleccione un profesor</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="contenedor-lista-estudiantes">
-                <h2>Estudiantes inscritos</h2>
-                <ol id="idListaEstudiantes">
-                    Ninguno
-                </ol>
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Tiempo de inicio</label>
+                    <input id="idTiempoInicio" type="time" class="form-control" min="6:00" max="20:00">
+                    <small class="text-muted">Clases entre 6:00 A.M. y 8:00 P.M.</small>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Tiempo de finalizacion</label>
+                    <input id="idTiempoFinalizacion" type="time" class="form-control" min="6:00" max="20:00">
+                    <small class="text-muted">Clases entre 6:00 A.M. y 8:00 P.M.</small>
+                </div>
+            </div>
+            
+            <div class="row g-3 mb-3 align-items-end">
+                <div class="cold-md-8">
+                    <label for="idCmbEstudiantes" class="form-label fw-bold">Estudiante</label>
+                    <select id="idCmbEstudiantes" class="form-select">
+                        <option value="0">Seleccione un estudiante</option>
+                    </select>
+                </div>
+
+                <div class="cold-md-4">
+                    <button id="idBtnAgregarEstudiante" type="button" class="btn btn-secondary w-100">
+                        Añadir estudiante
+                    </button>
+                </div>
             </div>
 
-            <div class="fila">
-                <!-- Cuando se guarda un nuevo dato, ese dato debe aparecer en el select al que pertenece-->
-                <button id="idBtnNuevoIdioma">Nuevo Idioma</button>
-                <button id="idBtnNuevoNivel">Nuevo Nivel</button>
+            <div class="mb-4">
+                <h2 class="h5 fw-bold">Estudiantes inscritos</h2>
+                <div class="card p-3">
+                    <ol id="idListaEstudiantes" class="list-group list-group-numbered">
+                        <li class="list-group-item">Ninguno</li>
+                    </ol>
+                </div>
             </div>
 
-            <div class="fila">
-                <button id="idBtnNuevoEstudiante">Nuevo Estudiante</button>
-                <button id="idBtnNuevoProfesor">Nuevo Profesor</button>
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <button id="idBtnNuevoIdioma" type="button" class="btn btn-outline-primary w-100">Nuevo Idioma</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="idBtnNuevoNivel" type="button" class="btn btn-outline-primary w-100">Nuevo Nivel</button>
+                </div>
             </div>
 
-            <div class="Fila">
-                <!--Cuando se presione este boton, se debe verificar que todos los datos ingresados sean validos, 
-                y luego guardar el grupo con los datos ingresados en el formulario-->
-                <button id="idBtnRegistrarGrupo">Registrar Grupo</button>
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <button id="idBtnNuevoEstudiante" type="button" class="btn btn-outline-primary w-100">Nuevo Estudiante</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="idBtnNuevoProfesor" type="button" class="btn btn-outline-primary w-100">Nuevo Profesor</button>
+                </div>
+            </div>
+
+             <div class="row">
+                <div class="col-12">
+                    <button id="idBtnRegistrarGrupo" type="button" class="btn btn-outline-primary w-100">Registrar Grupo</button>
+                </div>
             </div>
 
         </form>
     </div>
 
+        <section class="mb-5">
+            <h2 class="h4 fw-bold">Usuarios (profesores, estudiantes, admins)</h2>
+            <div class="card p-3 shadow-sm">
+                <div id="usuariosTable"></div>
+            </div>
+        </section>
 
+        <section class="mb-5">
+            <h2 class="h4 fw-bold">Grupos creados</h2>
+            <div class="card p-3 shadow-sm">
+                <div id="gruposList"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script type="module" src="../../Fase2/js/admin.js"></script>
 </body>
 </html>
