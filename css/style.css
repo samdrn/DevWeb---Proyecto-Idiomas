@@ -595,7 +595,6 @@ footer{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  min-width: max-content;
   padding: auto;
   text-align: center;
   background: rgba(255, 106, 0, 0.08);
