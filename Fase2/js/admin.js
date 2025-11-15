@@ -276,10 +276,29 @@ async function listarGrupos() {
         return;
     }
 
+    const idiomaGrupo = await getDocs(collection(db,"idiomas"));
+    const nivelesGrupo  = await getDocs(collection(db,"niveles"));
+    const usuariosGrupo = await getDocs(collection(db,"usuarios"));
+
+    const idiomaUnion = {}
+    const nivelesUnion = {}
+    const usuariosUnion = {}
+
+    idiomaGrupo.forEach(n=> idiomaUnion[n.id] = n.data().nombre);
+    nivelesGrupo.forEach(n=>nivelesUnion[n.id]=n.data().nombre);
+    usuariosGrupo.forEach(n=>usuariosUnion[n.id]=n.data().email);
+
+
     gruposListRoot.innerHTML = snap.docs.map(g => {
         const d = g.data();
+
+        const idiomaNombre = idiomaUnion[d.idiomaId] || d.idiomaId;
+        const nivelNombre = nivelesUnion[d.nivelId] || d.nivelId;
+        const profesorEmail = usuariosUnion[d.profesorId] || d.profesorId;
+        
         return `<div class="grupo-card" data-id="${g.id}">
-      <strong>Grupo:</strong> idioma(${d.idiomaId}) nivel(${d.nivelId}) profesor(${d.profesorId})<br/>
+      <strong>Grupo:</strong> idioma${idiomaNombre} - ${nivelNombre}<br/>
+      <strong>Profesor:</strong> ${profesorEmail}<br/>
       ${d.horaInicio} - ${d.horaFin} | estudiantes: ${Array.isArray(d.estudiantes)?d.estudiantes.length:0}
       <div><button class="btn-edit-grupo btn btn-sm btn-outline-primary" data-id="${g.id}">Ver / Edit</button>
       <button class="btn-del-grupo btn btn-sm btn-outline-danger" data-id="${g.id}">Eliminar</button></div>
@@ -298,13 +317,17 @@ async function listarGrupos() {
     gruposListRoot.querySelectorAll(".btn-edit-grupo").forEach(btn => {
         btn.addEventListener("click", async () => {
             const id = btn.dataset.id;
-            const snap = await getDocs(collection(db, "grupos"));
-            const gdoc = snap.docs.find(x => x.id === id);
-            
+            const snap = await getDocs(collection(db,"grupos"));
+            const gdoc = snap.docs.find(x=>x.id===id);
+
             if (!gdoc) return alert("Grupo no encontrado");
             const d = gdoc.data();
-            
-            alert(`Grupo ${id}\nProfesor: ${d.profesorId}\nEstudiantes: ${ (d.estudiantes || []).join(", ") }`);
+
+            const idiomaNombre = idiomaUnion[d.idiomaId] || d.idiomaId;
+            const nivelNombre = nivelesUnion[d.nivelId] || d.nivelId;
+            const profesorEmail = usuariosUnion[d.profesorId] || d.profesorId;
+        
+            alert(`Grupo: ${idiomaNombre} - ${nivelNombre} \nProfesor: ${profesorEmail} \nHorario: ${d.horaInicio} - ${d.horaFin}\nEstudiantes: ${Array.isArray(d.estudiantes)?d.estudiantes.length:0}`);
         });
     });
 }
