@@ -44,23 +44,30 @@ async function cargarGruposProfesor(profesorId) {
         id: d.id, ...d.data()
     }));
 
-    mostrarListaGrupos();
+    await mostrarListaGrupos();
 }
 
-function mostrarListaGrupos() {
+async function mostrarListaGrupos() {
     listaGrupos.innerHTML = "";
 
-    gruposProfesor.forEach((g) => {
-        const li = document.createElement("li");
-        li.classList.add("list-group-item", "grupo-item");
-        li.textContent = `Idioma (${g.idiomaId}) - Nivel (${g.nivelId})`;
-        li.dataset.id = g.id;
+    for (const grupo of gruposProfesor){
+        const idiomaGrupo = await getDoc(doc(db,"idiomas", grupo.idiomaId));
+        const idiomaNombre = idiomaGrupo.exists() ? idiomaGrupo.data().nombre:grupo.idiomaId;
+    
 
-        li.addEventListener("click", () => seleccionarGrupo(g.id));
-        
-        listaGrupos.appendChild(li);
-    });
-}
+    const nivelGrupo = await getDoc(doc(db,"niveles", grupo.nivelId));
+    const nivelNombre = nivelGrupo.exists() ? nivelGrupo.data().nombre:grupo.nivelId;
+    
+    const li = document.createElement("li");
+    li.classList.add("list-group-item", "grupo-item");
+    li.textContent = `${idiomaNombre}-${nivelNombre}`;
+    li.dataset.id = grupo.id;
+
+    li.addEventListener("click",()=>seleccionarGrupo(grupo.id));
+
+    listaGrupos.appendChild(li);
+
+}}
 
 async function seleccionarGrupo(grupoId) {
     const grupo = gruposProfesor.find(g => g.id === grupoId);
